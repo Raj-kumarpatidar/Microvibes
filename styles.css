@@ -1,0 +1,185 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #8BC34A;
+    --background-light: #F1F8E9;
+    --text-dark: #333;
+    --text-light: #fff;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-section {
+    background: url('images/microgreens-hero.jpg') no-repeat center center/cover;
+    color: var(--text-light);
+    padding: 8rem 0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #689F38;
+}
+
+.products-section, .subscriptions-section, .order-section, .about-section {
+    background-color: var(--text-light);
+}
+
+.products-section h2, .subscriptions-section h2, .order-section h2, .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.product-list, .subscription-plans {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product-card, .plan-card {
+    background-color: var(--background-light);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover, .plan-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    margin-top: 0;
+}
+
+.price, .plan-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Order Form Section */
+.order-section {
+    background-color: var(--background-light);
+}
+
+#order-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+#order-form input, #order-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#order-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#order-form button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#order-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
