@@ -1,18 +1,33 @@
-:root {
-    --primary-color: #4CAF50;
-    --secondary-color: #8BC34A;
-    --background-light: #F1F8E9;
-    --text-dark: #333;
-    --text-light: #fff;
-    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Under Development Banner */
+.under-development-banner {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
+/* Color Variables */
+:root {
+    --primary-color: #3f876d;
+    --secondary-color: #0b635b;
+    --background-light: #fffaf0;
+    --background-dark: #f0f0e8;
+    --text-dark: #333;
+    --text-light: #fff;
+    --card-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Base Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: var(--text-dark);
     background-color: var(--background-light);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -21,10 +36,15 @@ body {
     padding: 0 20px;
 }
 
+/* Header */
 header {
     background-color: var(--primary-color);
     color: var(--text-light);
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header nav {
@@ -36,6 +56,7 @@ header nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 header ul {
@@ -50,52 +71,73 @@ header a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
+header a:hover {
+    color: #c4e4c4;
+}
+
+/* Sections */
 section {
-    padding: 4rem 0;
+    padding: 6rem 0;
     text-align: center;
 }
 
+/* Hero Section */
 .hero-section {
-    background: url('images/microgreens-hero.jpg') no-repeat center center/cover;
+    background: url('images/microgreens-hero.png') no-repeat center center/cover;
     color: var(--text-light);
-    padding: 8rem 0;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    padding: 10rem 0;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
 }
 
 .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .hero-section p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
 .cta-button {
     background-color: var(--secondary-color);
     color: var(--text-light);
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    transition: background-color 0.3s;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
-    background-color: #689F38;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.products-section, .subscriptions-section, .order-section, .about-section {
-    background-color: var(--text-light);
+/* Main Sections */
+.products-section, .subscriptions-section, .about-section, .research-section, .blog-section, .instagram-section {
+    background-color: var(--background-light);
 }
 
-.products-section h2, .subscriptions-section h2, .order-section h2, .about-section h2 {
-    font-size: 2.5rem;
+.order-section {
+    background-color: var(--background-dark);
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 2rem;
+    color: var(--secondary-color);
 }
 
+/* Product & Plan Cards */
 .product-list, .subscription-plans {
     display: flex;
     justify-content: center;
@@ -103,83 +145,336 @@ section {
     gap: 2rem;
 }
 
-.product-card, .plan-card {
+.product-card {
     background-color: var(--background-light);
-    border-radius: 10px;
-    padding: 2rem;
+    border-radius: 15px;
     box-shadow: var(--card-shadow);
     max-width: 300px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
 }
 
-.product-card:hover, .plan-card:hover {
-    transform: translateY(-10px);
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .product-card img {
     max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.product-card h3 {
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Image Overlay for Product Name */
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-light);
+    padding: 1rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.product-card:hover .image-overlay {
+    background-color: var(--primary-color);
+}
+
+.image-overlay h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Subscription Cards (no image) */
+.plan-card {
+    background-color: var(--background-light);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.plan-card h3 {
     margin-top: 0;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
 }
 
 .price, .plan-price {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-color);
 }
 
-/* Order Form Section */
-.order-section {
+.short-desc {
+    margin: -1rem 0 1rem;
+    color: #666;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Research Section */
+.research-section .subtitle {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.research-item {
+    background-color: var(--text-light);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    border-radius: 5px;
+}
+
+.research-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* Blog List Page Styles */
+.blog-list-section {
     background-color: var(--background-light);
 }
 
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post-card {
+    background-color: var(--background-dark);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-content h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.blog-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.read-more {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 1rem;
+    transition: padding-left 0.3s ease;
+}
+
+.read-more:hover {
+    padding-left: 1.5rem;
+}
+
+.view-all-link {
+    margin-top: 2rem;
+}
+
+/* Instagram Section Styles */
+.instagram-section {
+    background-color: var(--background-light);
+}
+
+#insta-feed-container {
+    margin: 2rem auto;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Order Form Section (Simplified) */
+.order-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.order-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
 #order-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
+    background-color: var(--text-light);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    max-width: 600px;
     margin: 0 auto;
-    gap: 1rem;
+    display: grid;
+    gap: 1.5rem;
 }
 
 #order-form input, #order-form textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
     width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#order-form input:focus, #order-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 135, 109, 0.2);
 }
 
 #order-form textarea {
-    height: 100px;
+    height: 120px;
     resize: vertical;
 }
 
 #order-form button {
     background-color: var(--primary-color);
     color: var(--text-light);
-    padding: 15px;
+    padding: 18px;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #order-form button:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-3px);
 }
 
-footer {
-    background-color: var(--text-dark);
-    color: var(--text-light);
-    padding: 2rem 0;
-    text-align: center;
-}
 
-footer p {
-    margin: 0.5rem 0;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-section {
+        padding: 6rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .products-section h2, .subscriptions-section h2, .about-section h2, .research-section h2, .order-section h2 {
+        font-size: 2rem;
+    }
+
+    .product-list, .subscription-plans, .research-grid, .blog-preview-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .whatsapp-button {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+    }
 }

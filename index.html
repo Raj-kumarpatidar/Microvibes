@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <div class="under-development-banner">
+        <p>This website is currently under development. More features and products are coming soon!</p>
+    </div>
 
     <header>
         <div class="container">
@@ -16,6 +20,7 @@
                 <ul>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#subscriptions">Subscriptions</a></li>
+                    <li><a href="#research">The Science</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#order">Order Now</a></li>
                 </ul>
@@ -36,24 +41,24 @@
             <div class="container">
                 <h2>Our Fresh Products</h2>
                 <div class="product-list">
-                    <div class="product-card">
+                    <a href="products/radish-microgreens.html" class="product-card">
                         <img src="images/microgreen1.png" alt="Radish Microgreens">
-                        <h3>Radish Microgreens</h3>
-                        <p>A spicy, peppery flavor. Excellent source of Vitamin C & E.</p>
-                        <span class="price">₹150 / 100g</span>
-                    </div>
-                    <div class="product-card">
+                        <div class="image-overlay">
+                           <h3>Radish Microgreens</h3>
+                        </div>
+                    </a>
+                    <a href="products/sunflower-microgreens.html" class="product-card">
                         <img src="images/microgreen2.png" alt="Sunflower Microgreens">
-                        <h3>Sunflower Microgreens</h3>
-                        <p>Crunchy and nutty. High in protein, zinc, and iron.</p>
-                        <span class="price">₹120 / 100g</span>
-                    </div>
-                    <div class="product-card">
+                        <div class="image-overlay">
+                           <h3>Sunflower Microgreens</h3>
+                        </div>
+                    </a>
+                    <a href="products/wheatgrass-juice.html" class="product-card">
                         <img src="images/wheatgrass-juice.png" alt="Fresh Wheatgrass Juice">
-                        <h3>Fresh Wheatgrass Juice</h3>
-                        <p>100% pure and fresh-pressed daily. The ultimate detox shot.</p>
-                        <span class="price">₹80 / 100ml</span>
-                    </div>
+                        <div class="image-overlay">
+                           <h3>Fresh Wheatgrass Juice</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -63,17 +68,77 @@
                 <h2>Subscription Models</h2>
                 <div class="subscription-plans">
                     <div class="plan-card">
-                        <h3>Weekly Delight</h3>
-                        <p>Get a fresh box of microgreens every week.</p>
-                        <p>100g of your choice</p>
-                        <span class="plan-price">Starts at ₹500 / month</span>
+                        <div class="card-content">
+                            <h3>Weekly Delight</h3>
+                            <p class="short-desc">Get a fresh box every week.</p>
+                            <p class="plan-price">Starts at ₹500 / month</p>
+                            <a href="#order" class="card-button">Order Now</a>
+                        </div>
                     </div>
                     <div class="plan-card">
-                        <h3>Detox Pro</h3>
-                        <p>Daily shot of fresh wheatgrass juice delivered 6 days a week.</p>
-                        <p>100ml daily</p>
-                        <span class="plan-price">Starts at ₹1800 / month</span>
+                        <div class="card-content">
+                            <h3>Detox Pro</h3>
+                            <p class="short-desc">Daily shot of fresh juice.</p>
+                            <p class="plan-price">Starts at ₹1800 / month</p>
+                            <a href="#order" class="card-button">Order Now</a>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="research-section">
+            <div class="container">
+                <h2>The Science Behind Microgreens</h2>
+                <p class="subtitle">Small in size, but mighty in nutrients. Research shows microgreens are a true superfood.</p>
+                <div class="research-grid">
+                    <div class="research-item">
+                        <h3>Nutrient Density</h3>
+                        <p>Scientific studies have found that **microgreens contain up to 40 times higher levels of nutrients** than their mature vegetable counterparts. This includes essential vitamins like Vitamin C, E, and K.</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>Antioxidant Power</h3>
+                        <p>They are a rich source of **antioxidants and polyphenols**, which help fight free radicals in the body, reduce inflammation, and may lower the risk of chronic diseases.</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>Variety of Benefits</h3>
+                        <p>Each variety offers unique benefits. For example, **radish microgreens** are linked to improved heart health, while **broccoli microgreens** contain sulforaphane, a compound known for its anti-cancer properties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog-section" class="blog-section">
+            <div class="container">
+                <h2>From Our Blog</h2>
+                <div class="blog-preview-grid">
+                    <div class="blog-post-card">
+                        <img src="images/blog-post-1.png" alt="Microgreens in Smoothies">
+                        <h3>5 Easy Ways to Use Microgreens</h3>
+                        <p>Add a nutritional punch to your daily diet with these simple tips for incorporating microgreens into your meals.</p>
+                        <a href="blog.html" class="read-more">Read More &rarr;</a>
+                    </div>
+                    <div class="blog-post-card">
+                        <img src="images/blog-post-2.png" alt="Wheatgrass Juice Benefits">
+                        <h3>Why Wheatgrass Juice is a Must-Have</h3>
+                        <p>Discover the incredible detoxifying and energy-boosting benefits of a daily shot of fresh wheatgrass juice.</p>
+                        <a href="blog.html" class="read-more">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="view-all-link">
+                    <a href="blog.html" class="cta-button">View All Blogs</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram-section" class="instagram-section">
+            <div class="container">
+                <h2>Follow Us on Instagram</h2>
+                <div id="insta-feed-container">
+                    <p>Loading our latest posts... Please check back in a moment or visit our profile directly!</p>
+                </div>
+                <div class="view-all-link">
+                    <a href="https://www.instagram.com/micro_vibes_" target="_blank" class="cta-button">Follow Us &rarr;</a>
                 </div>
             </div>
         </section>
@@ -87,16 +152,16 @@
 
         <section id="order" class="order-section">
             <div class="container">
-                <h2>Place Your Order</h2>
-                <p>Fill out the form below, and we'll confirm your order via WhatsApp!</p>
+                <h2>Ready to Place Your Order? 💚</h2>
+                <p>Tell us what you need. We'll send you an instant confirmation on WhatsApp!</p>
                 
                 <form id="order-form" name="order-form" data-netlify="true">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="tel" name="phone" placeholder="WhatsApp Number" required>
-                    <textarea name="order-details" placeholder="Your order details (e.g., 'Weekly Delight Subscription' or '200g Sunflower Microgreens')" required></textarea>
+                    <textarea name="order-details" placeholder="Please list your order here (e.g., '100g Sunflower Microgreens' or 'Weekly Delight Subscription')" required></textarea>
                     <textarea name="delivery-address" placeholder="Your Full Address in Indore" required></textarea>
                     
-                    <button type="submit">Place Order via WhatsApp</button>
+                    <button type="submit">Order on WhatsApp</button>
                 </form>
             </div>
         </section>
@@ -108,6 +173,10 @@
             <p>Serving Freshness in Indore, MP</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/919770463072" class="whatsapp-button" target="_blank">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp us">
+    </a>
 
     <script src="script.js"></script>
 
